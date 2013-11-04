@@ -109,7 +109,7 @@ class HTTPElevator implements ElevatorEngine {
     @Override
     public ElevatorEngine reset(String cause) throws ElevatorIsBrokenException {
         // do not check transport error
-        httpGet(reset + "?cause=" + urlEncode(cause));
+        httpGet(reset + "?lowerFloor=0&higherFloor=19&cause=" + urlEncode(cause));
         return this;
     }
 

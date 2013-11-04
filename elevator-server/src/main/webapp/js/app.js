@@ -10,7 +10,7 @@ angular.module('elevatorApp', ['ngCookies', 'md5', 'ui-gravatar', 'elevatorApp.s
             restrict: 'E',
             link: function (scope, element, attrs) {
 
-                var numberOfFloors = 5;
+                var numberOfFloors = 20;
                 var width = 120;
                 var heightOfFloor = 40;
                 var widthOfFloor = 110;

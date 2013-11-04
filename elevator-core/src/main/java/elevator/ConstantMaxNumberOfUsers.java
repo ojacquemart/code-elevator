@@ -2,7 +2,7 @@ package elevator;
 
 public class ConstantMaxNumberOfUsers implements MaxNumberOfUsers {
 
-    private static final Integer MAX_NUMBER_OF_USERS = 10;
+    private static final Integer MAX_NUMBER_OF_USERS = 20;
 
     private final Integer value;
 
