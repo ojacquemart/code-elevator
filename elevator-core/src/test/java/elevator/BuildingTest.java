@@ -130,21 +130,6 @@ public class BuildingTest {
     }
 
     @Test
-    public void should_throws_exception_if_elevator_goes_up_but_is_already_at_higher_floor() {
-        when(elevator.nextCommand()).thenReturn(UP, UP, UP, UP, UP, UP);
-        Building building = new Building(elevator, new ConstantMaxNumberOfUsers());
-        building.updateBuildingState();
-        building.updateBuildingState();
-        building.updateBuildingState();
-        building.updateBuildingState();
-        building.updateBuildingState();
-
-        expectedException.expect(ElevatorIsBrokenException.class);
-        expectedException.expectMessage("can't go up because current floor is the highest floor");
-        building.updateBuildingState();
-    }
-
-    @Test
     public void should_throws_exception_if_elevator_goes_up_but_doors_are_open() {
         when(elevator.nextCommand()).thenReturn(Command.OPEN, UP);
         Building building = new Building(elevator, new ConstantMaxNumberOfUsers());

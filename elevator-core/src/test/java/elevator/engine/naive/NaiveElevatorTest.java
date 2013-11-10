@@ -29,7 +29,7 @@ public class NaiveElevatorTest {
                 onTick("      5").
                 onTick("OPEN   ").
                 onTick("CLOSE  ").
-                onTick("      4");
+                onTick("      6");
     }
 
     @Test
