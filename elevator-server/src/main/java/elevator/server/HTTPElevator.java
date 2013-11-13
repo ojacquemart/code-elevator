@@ -9,6 +9,7 @@ import elevator.logging.ElevatorLogger;
 
 import java.io.*;
 import java.net.*;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -108,8 +109,8 @@ class HTTPElevator implements ElevatorEngine {
 
     @Override
     public ElevatorEngine reset(String cause) throws ElevatorIsBrokenException {
-        // do not check transport error
-        httpGet(reset + "?lowerFloor=0&higherFloor=19&cause=" + urlEncode(cause));
+        int cabinSize = 10 + new Random().nextInt(40);
+        httpGet(reset + "?lowerFloor=0&higherFloor=19&cabinSize=" + cabinSize + "&cause=" + urlEncode(cause));
         return this;
     }
 
